@@ -10,7 +10,7 @@ public class ResourceController {
     @GetMapping("/api")
     public Mono<String> getMonoResult() {
 
-        return Mono.just("Hello, EveryOne God is with us, this is some extra text.");
+        return Mono.just("Hello, EveryOne God is with us, Another change");
     }
 
 
