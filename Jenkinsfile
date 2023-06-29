@@ -7,7 +7,6 @@ try{
         // for display purposes
         // Get some code from a GitHub repository
         git url: 'https://github.com/pierzegarra/spring-boot-devops.git',
-            credentialsId: '8Rn0FTmMPokx5O92sa6X58YP71JUxE1dBffBhM4M75M',
             branch: 'main'
      }
     stage('Build docker') {
