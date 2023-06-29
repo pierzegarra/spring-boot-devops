@@ -6,7 +6,7 @@ pipeline {
 	tools {
 		jdk 'java-17'
 	}
-	stages {
+	node {
 		stage('Build'){
 			steps {
 				bat "mvn clean install -DskipTests"
