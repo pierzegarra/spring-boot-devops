@@ -38,7 +38,7 @@ def notifyBuild(String buildStatus = 'STARTED'){
   def now = new Date()
 
   // message
-  def subject = "${buildStatus}, Job: ${env.JOB_NAME} FRONTEND - Deployment Sequence: [${env.BUILD_NUMBER}] "
+  //def subject = "${buildStatus}, Job: ${env.JOB_NAME} FRONTEND - Deployment Sequence: [${env.BUILD_NUMBER}] "
   def summary = "${subject} - Check On: (${env.BUILD_URL}) - Time: ${now}"
   //def subject_email = "Spring boot Deployment"
   //def details = """<p>${buildStatus} JOB </p>
