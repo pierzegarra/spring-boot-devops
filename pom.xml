@@ -67,7 +67,7 @@
 			<uniqueVersion>false</uniqueVersion>
 			<id>springboot-devops-nexus-release</id>
 			<name>springboot-devops-nexus-release</name>
-			<url>http://0.0.0.0:8081/repository/springboot-devops-nexus-release/</url>
+			<url>http://localhost:8081/repository/springboot-devops-nexus-release/</url>
 		</repository>
 	</distributionManagement>
 </project>
