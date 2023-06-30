@@ -1,21 +1,21 @@
 node {
-    def WORKSPACE = "/var/lib/jenkins/workspace/spring-boot-devops"
+    def WORKSPACE = "/var/lib/jenkins/workspace/springboot-devops-nexus-release"
     def dockerImageTag = "springboot-deploy${env.BUILD_NUMBER}"
 try{
     notifyBuild('STARTED')
     stage('Clone Repo') {
         // for display purposes
         // Get some code from a GitHub repository
-        git url: 'https://github.com/pierzegarra/spring-boot-devops.git',
+        git url: 'https://github.com/pierzegarra/springboot-devops-nexus-release.git',
             branch: 'main'
      }
     stage('Build docker') {
-         dockerImage = docker.build("spring-boot-devops:${env.BUILD_NUMBER}")
+         dockerImage = docker.build("springboot-devops-nexus-release:${env.BUILD_NUMBER}")
     }
     stage('Deploy docker'){
           echo "Docker Image Tag Name: ${dockerImageTag}"
-          sh "docker stop spring-boot-devops || true && docker rm spring-boot-devops || true"
-          sh "docker run --name spring-boot-devops -d -p 8082:8082 spring-boot-devops:${env.BUILD_NUMBER}"
+          sh "docker stop springboot-devops-nexus-release || true && docker rm springboot-devops-nexus-release || true"
+          sh "docker run --name springboot-devops-nexus-release -d -p 8082:8082 springboot-devops-nexus-release:${env.BUILD_NUMBER}"
     }
 }catch(e){
     currentBuild.result = "FAILED"
